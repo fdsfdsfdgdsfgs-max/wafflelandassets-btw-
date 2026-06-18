@@ -5,6 +5,62 @@
 <title>WAFFLE LAND</title>
 
 <style>
+#rubberbanding {
+animation: rubberBand 0.9s; 
+animation-iteration-count: infinite;
+ 
+} 
+ 
+rubberband { 
+transform: scale3d(1, 1, 1); 
+} 
+ 
+@-webkit-keyframes rubberBand { 
+0% { 
+-webkit-transform: scale3d(1, 1, 1);
+transform: scale3d(1, 1, 1);
+}
+ 
+30% {
+-webkit-transform: scale3d(1.25, 0.75, 1);
+transform: scale3d(1.25, 0.75, 1);
+}
+ 
+40% {
+-webkit-transform: scale3d(0.75, 1.25, 1);
+transform: scale3d(0.75, 1.25, 1);
+}
+ 
+50% {
+-webkit-transform: scale3d(1.15, 0.85, 1);
+transform: scale3d(1.15, 0.85, 1);
+}
+ 
+65% {
+-webkit-transform: scale3d(.95, 1.05, 1);
+transform: scale3d(.95, 1.05, 1);
+}
+ 
+75% {
+-webkit-transform: scale3d(1.05, .95, 1);
+transform: scale3d(1.05, .95, 1);
+}
+ 
+100% {
+-webkit-transform: scale3d(1, 1, 1);
+transform: scale3d(1, 1, 1);
+}
+}
+
+
+
+
+
+
+
+
+
+
 body {
     background-image: url('https://blob.gifcities.org/gifcities/A4PTFIGNU6AAXCRK25ABESQSJDTE2Q5E.gif');
     cursor: crosshair;
@@ -181,14 +237,15 @@ DONT CLICK IT!!
 </p>
 <img src="https://blob.gifcities.org/gifcities/3QVAK5TUPRXXQVGTG4KYM6XEG5CSADMA.gif">
 
+<div style="text-align: center"> <img  src="https://gifcity.carrd.co/assets/images/gallery46/56b85645.gif?v=3fc8f5cd"> </div>
 
+<div style="text-align: center"> <img  src="https://gifcity.carrd.co/assets/images/gallery49/ca5a5dc0.gif?v=3fc8f5cd"> </div>
 
+<p>WATCH OUT, FLOODING MAY OCCUR</p>
 
+<div style="text-align: center"> <img  src="https://gifcity.carrd.co/assets/images/gallery81/9aa47f49.gif?v=3fc8f5cd"> </div>
 
-
-
-
-
+<p>donutS</p>
 
 
 
@@ -352,5 +409,6 @@ setInterval(() => {
 
 </script>
 
+<div id="rubberbanding">WEBSITES SO COOL!</div>
 </body>
 </html>
