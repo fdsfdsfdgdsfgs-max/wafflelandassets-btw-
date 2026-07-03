@@ -1,254 +1,416 @@
-<style>
-  .Marquee-box {
-     position: relative;
-     display: inline-block;
-     width: 500px;
-     height: 80px;
-     -webkit-perspective: 500px;
-             perspective: 500px;
-     top: auto;
-     left: auto;
-     z-index: 100;
-  }
-  .MyMarquee {
-     text-align: center;
-     font-weight: bold;
-     width: 100%;
-     height: 100%;
-     font-size: 25px;
-     border: 1px solid #8C8C8C;
-     color: #FFFFFF;
-     font-family: Arial, Helvetica, sans-serif;
-     vertical-align: middle;
-     -webkit-box-sizing: border-box;
-        -moz-box-sizing: border-box;
-             box-sizing: border-box;
-     background: -webkit-linear-gradient(90deg, #8F0808 5%, #F70505 100%);
-     background:    -moz-linear-gradient(90deg, #8F0808 5%, #F70505 100%);
-     background:     -ms-linear-gradient(90deg, #8F0808 5%, #F70505 100%);
 
-     transform: rotateX(21deg);
-     transform-origin: 50% 50% 0px;
-  }
-  .MyMarquee div {
-     display: inline-block;
-     vertical-align: middle;
-  }
-  .MyMarquee a, .MyMarquee img {
-     display: inline-block;
-     text-decoration: underline;
-     color: #FFFFFF;
-     vertical-align: middle;
-  }
-
-</style>
-
-
-
+<!DOCTYPE html>
+<html>
+<head>
+<title>WAFFLE LAND</title>
 
 <style>
-.container {
-  width: 100%;
-  height: 100%;
-  background: lightblue;
-  position: relative;
-  overflow: hidden;
-}
-.parent {
-  text-align: center;
-}
-
-
-
-.container::before {
-  content: "";
-  position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background: radial-gradient(circle, #3498db 10%, transparent 20%),
-    radial-gradient(circle, transparent 10%, #3498db 20%);
-  background-size: 30px 30px;
-  animation: moveBackground 8s linear infinite;
-  timing function */
-}
-
-@keyframes moveBackground {
-  0% {
-    transform: translate(0, 0);
-  }
-  100% {
-    transform: translate(20%, 20%);
-  }
-}
-
-.frutiger-aero-button {
-  --hue: 245;
-  --sat: 0.16;
-  --glow-intensity: 0.8;
-
-  --fg: oklch(15% calc(var(--sat) * 0.5) var(--hue));
-  --bg: oklch(75% var(--sat) var(--hue) / 0.8);
-  --bg-dark: oklch(45% var(--sat) var(--hue) / 0.75);
-  --bottom-glow: radial-gradient(
-    farthest-corner at bottom center,
-    rgba(255, 255, 255, var(--glow-intensity)),
-    transparent
-  );
-
-  background-color: var(--bg);
-  background:
-    var(--bottom-glow),
-    linear-gradient(to bottom, var(--bg-dark), var(--bg));
-
-  border: 1px solid var(--bg);
-  border-radius: 9999px;
-
-  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.4);
-
-  color: var(--fg);
-  font-family: "Lucida Grande", "Lucida Sans Unicode", "Segoe UI", system-ui, sans-serif;
-  font-weight: 700;
-  text-shadow: 0 2px 0.5em rgba(0, 0, 0, 0.2);
-
-  cursor: pointer;
-  position: relative;
-  transition: all 300ms ease;
-
-  user-select: none;
-  -webkit-user-select: none;
-}
-
-.frutiger-aero-button::after {
-  content: "";
-  position: absolute;
-  top: 4%;
-  left: 0.75em;
-  width: calc(100% - 1.5em);
-  height: 40%;
-  background: linear-gradient(
-    to bottom,
-    rgba(255, 255, 255, 0.8),
-    rgba(255, 255, 255, 0.1)
-  );
-  border-radius: inherit;
-  transition: background 400ms ease;
-  pointer-events: none;
-}
-
-.frutiger-aero-button:hover,
-.frutiger-aero-button:focus {
-  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.4);
-  transform: translateY(-1px);
-}
-
-.frutiger-aero-button:active {
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
-  transform: translateY(1px);
-}
-
-.frutiger-aero-button.small {
-  padding: 0.5em 1.5em;
-  font-size: 0.875rem;
-}
-
-.frutiger-aero-button.medium {
-  padding: 0.75em 2em;
-  font-size: 1rem;
-}
-
-.frutiger-aero-button.large {
-  padding: 1em 3em;
-  font-size: 1.125rem;
-}
-.loader {
-  display: flex;
-  justify-content: space-between;
-}
-
-.pac-man {
-  width: 5em;
-  aspect-ratio: 1;
-  border-radius: 50%;
-  background: radial-gradient(farthest-side,#000 98%,#0000) 1.7em 0.61em/.8em .8em no-repeat,  
-    #ffcc00;
-  box-shadow: .2em -.6em 1.2em 0em inset rgba(0, 0, 0, 0.7);
-  animation: l4 .5s infinite steps(5) alternate;
-  z-index: 999;
-}
-
-.point {
-  margin-top: 2em;
-  position: absolute;
-  margin-left: .4em;
-  width: 1em;
-  height: 1em;
-  background-color: #000;
-  border-radius: 50%;
-}
-
-.p1 {
-  margin-left: 8em;
-  animation: moove-p1 2s linear infinite;
-}
-
-.p2 {
-  margin-left: 15em;
-  animation: moove-p2 2s linear infinite;
-}
-
-@keyframes moove-p1 {
-  0% {
-    margin-left: 8em;
-  }
-
-  100% {
-    margin-left: 0em;
-  }
-}
-
-@keyframes moove-p2 {
-  0% {
-    margin-left: 16em;
-  }
-
-  100% {
-    margin-left: 8em;
-  }
-}
-
-@keyframes l4 {
+#rubberbanding {
+animation: rubberBand 0.9s; 
+animation-iteration-count: infinite;
  
-  0% {
-    clip-path: polygon(50% 50%,100% 0,100% 0,0 0,0 100%,100% 100%,100% 100%)
-  }
+} 
+ 
+rubberband { 
+transform: scale3d(1, 1, 1); 
+} 
+ 
+@-webkit-keyframes rubberBand { 
+0% { 
+-webkit-transform: scale3d(1, 1, 1);
+transform: scale3d(1, 1, 1);
+}
+ 
+30% {
+-webkit-transform: scale3d(1.25, 0.75, 1);
+transform: scale3d(1.25, 0.75, 1);
+}
+ 
+40% {
+-webkit-transform: scale3d(0.75, 1.25, 1);
+transform: scale3d(0.75, 1.25, 1);
+}
+ 
+50% {
+-webkit-transform: scale3d(1.15, 0.85, 1);
+transform: scale3d(1.15, 0.85, 1);
+}
+ 
+65% {
+-webkit-transform: scale3d(.95, 1.05, 1);
+transform: scale3d(.95, 1.05, 1);
+}
+ 
+75% {
+-webkit-transform: scale3d(1.05, .95, 1);
+transform: scale3d(1.05, .95, 1);
+}
+ 
+100% {
+-webkit-transform: scale3d(1, 1, 1);
+transform: scale3d(1, 1, 1);
+}
+}
 
-  100% {
-    clip-path: polygon(50% 50%,100% 65%,100% 0,0 0,0 100%,100% 100%,100%  35%)
-  }
-}</style>
-
-
- <div class="Marquee-box">
-   <marquee class="MyMarquee" id="lyricsite" direction="left" behavior="3" scrollamount="6" onmouseover="this.stop()" onmouseout="this.start()">
-     <div>FSH4RP SITE YO!</div>
-     <div><img src="https://blob.gifcities.org/gifcities/COR7AO5RXK2YW7D4OPG6GTGUKF3L62CS.gif" width="120" height="80" alt="marquee image"></div>
-     <div><a href="https://fsh4rp.art/">JOIN</a></div>
-   </marquee>
- </div>
 
 
 
 
-<div style="position: absolute; top: 0; left: 0; z-index: -1; width: 100%; height: 100%; background-color: lightblue;">
-  <div class="container"></div>
+
+
+
+
+
+body {
+    background-image: url('https://blob.gifcities.org/gifcities/A4PTFIGNU6AAXCRK25ABESQSJDTE2Q5E.gif');
+    cursor: crosshair;
+    overflow-x: hidden;
+    font-family: Comic Sans MS, cursive;
+}
+
+.center-image {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+.drag-box {
+    position: absolute;
+    width: 120px;
+    cursor: grab;
+    user-select: none;
+}
+
+.drag-box img {
+    width: 100%;
+    height: auto;
+    pointer-events: none;
+}
+
+.drag-box:active {
+    cursor: grabbing;
+}
+
+.spin {
+    display: block;
+    margin: auto;
+    width: 120px;
+    animation: spin 3s linear infinite;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.blink {
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    50% {
+        opacity: 0;
+    }
+}
+
+.counter {
+    text-align: center;
+    margin-top: 20px;
+}
+
+#ghostCanvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 999999;
+}
+</style>
+</head>
+
+<body>
+
+<marquee class="blink" style="color:red;">
+WELCOME TO WAFFLE LAND!!! <BR> TURN ON AUDIO U ####
+</marquee>
+
+<p style="color:red;text-align:center;">
+welcome to waffle land.
+</p>
+
+<img
+src="https://blob.gifcities.org/gifcities/35NRBYNQE7IF6P5OKBZO3GC66FVGBYKV.gif"
+class="center-image">
+
+<p style="color:red;text-align:center;">
+Our website really has it all! we made it in html and you can too!
+</p>
+
+<p style="color:blue;text-align:center;">
+we got that javascript too, try dragging our cool 3ds around!
+</p>
+
+<div class="drag-box" style="top:100px;left:100px;">
+<img src="https://media3.giphy.com/media/v1.Y2lkPTZjMDliOTUyYmVrNmF2cWo4dTd5YWptdHU3NTJkdHd4ODNtbDh4dTNkdHAyN2JwcCZlcD12MV9zdGlja2Vyc19zZWFyY2gmY3Q9cw/WOFjRXKNWeH9m/200w.gif">
 </div>
-<body class="parent">
-<div class="loader">
-  <body class="parent"><div class="pac-man"></div></body>
-  <div class="point p1"></div>
-  <div class="point p2"></div>
+
+<div class="drag-box" style="top:150px;left:300px;">
+<img src="https://blob.gifcities.org/gifcities/2O2UWDGYFNOHHSTO42TG47IHE2BOKW3E.gif">
 </div>
-<a href="https://waffleland.farted.net/waffles.html" class="frutiger-aero-button small">Land straight into waffle land!</a>
+
+<div class="drag-box" style="top:150px;left:450px;">
+<img src="https://blob.gifcities.org/gifcities/32IBKJMQY7E6UO4ZIWTU5MJ37M7IKRJJ.gif">
+</div>
+
+<div class="drag-box" style="top:330px;left:275px;">
+<img src="https://blob.gifcities.org/gifcities/Z3KMK2KGF7DRZVLWRBNB3H4NRMKBLWPK.gif">
+</div>
+
+<p style="color:blue;text-align:center;">
+thats not all! check out our background using css!
+</p>
+
+<marquee>
+watch out world, waffle land has arrived B)!
+</marquee>
+
+<marquee behavior="scroll" direction="left" scrollamount="5">
+
+<img src="https://blob.gifcities.org/gifcities/23C7723CTWPY6HFYDGZMWPUS7YQWVLU2.gif" height="100">
+
+<img src="https://blob.gifcities.org/gifcities/B4ZP7RNFZKZF5ORQP6BJKW3GAMXI4RSB.gif" height="100">
+
+<img src="https://blob.gifcities.org/gifcities/BSKBGYM72NNVJLHMWHXARQCXRRCQJP6F.gif" height="100">
+
+</marquee>
+
+<img
+class="spin"
+src="https://blob.gifcities.org/gifcities/23C7723CTWPY6HFYDGZMWPUS7YQWVLU2.gif">
+
+<p style="color:blue;text-align:center;">
+dont worry south park fans, we love you guys too :P
+</p>
+
+<details>
+<summary>if ur feeling down click this!</summary>
+<p>when life gets you down, waffle around!</p>
+</details>
+
+<button popovertarget="fr">my fav food</button>
+
+<div id="fr" popover>
+<p>I LOVE SPAGHETTI!!!!</p>
+</div>
+
+<p>
+we accept all people, except for
+<mark>PARTY POOPERS!!!</mark>
+</p>
+
+<marquee>
+I love garfeild
+</marquee>
+
+<img src="https://blob.gifcities.org/gifcities/2V66JIT636HZ2OCEVAYFOXNNKHF2JMIF.gif">
+
+<img src="https://blob.gifcities.org/gifcities/NVFQ56N6YPLNU7LWQAWPPOZ5OH2X7BRM.gif">
+
+
+<img src="https://blob.gifcities.org/gifcities/33Q4INZMC4V2HSS6RU2AVTQPVRAT4WQE.gif">
+
+<img src="https://blob.gifcities.org/gifcities/KSQGGHUGQR3WRUHLSSFD36TAFWYLDQ2X.gif">
+
+<img src="https://blob.gifcities.org/gifcities/WIAPQ6CGK3ZUX6YBDC6CQN3Q3BO5TU7D.gif">
+
+<p>
+beware of the pikachu virus!!
+</p>
+<img src="https://i.redd.it/0476eq29a4881.jpg">
+<p>
+DONT CLICK IT!!
+</p>
+<img src="https://blob.gifcities.org/gifcities/3QVAK5TUPRXXQVGTG4KYM6XEG5CSADMA.gif">
+
+<div style="text-align: center"> <img  src="https://gifcity.carrd.co/assets/images/gallery46/56b85645.gif?v=3fc8f5cd"> </div>
+
+<div style="text-align: center"> <img  src="https://gifcity.carrd.co/assets/images/gallery49/ca5a5dc0.gif?v=3fc8f5cd"> </div>
+
+<p>WATCH OUT, FLOODING MAY OCCUR</p>
+
+<div style="text-align: center"> <img  src="https://gifcity.carrd.co/assets/images/gallery81/9aa47f49.gif?v=3fc8f5cd"> </div>
+
+<p>donutS</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p>from the creators of</p>
+
+<a href="https://epick.fritsche.org" target="_blank">
+  <img src="https://github.com/fdsfdsfdgdsfgs-max/wafflelandassets-btw-/blob/main/Epick.gif?raw=true" alt="Epick">
+</a>
+
+<a href="https://fsh4rp.art" target="_blank">
+  <img src="https://github.com/fdsfdsfdgdsfgs-max/wafflelandassets-btw-/blob/main/FSHARP.gif?raw=true" alt="fhsarp">
+</a>
+
+<a href="https://ziggyisbetterthanu.fishfarm.ch/" target="_blank">
+  <img src="https://github.com/fdsfdsfdgdsfgs-max/wafflelandassets-btw-/blob/main/ZIGGY.gif?raw=true" alt="ZIGGY">
+</a>
+
+<script>
+
+const boxes = document.querySelectorAll(".drag-box");
+
+let activeBox = null;
+let dragging = false;
+let offsetX = 0;
+let offsetY = 0;
+
+boxes.forEach(box => {
+
+    box.addEventListener("mousedown", e => {
+
+        dragging = true;
+        activeBox = box;
+
+        offsetX = e.clientX - box.offsetLeft;
+        offsetY = e.clientY - box.offsetTop;
+    });
+
+});
+
+document.addEventListener("mousemove", e => {
+
+    if (!dragging || !activeBox) return;
+
+    activeBox.style.left =
+        (e.clientX - offsetX) + "px";
+
+    activeBox.style.top =
+        (e.clientY - offsetY) + "px";
+
+});
+
+document.addEventListener("mouseup", () => {
+
+    dragging = false;
+    activeBox = null;
+
+});
+
+const canvas = document.createElement("canvas");
+
+canvas.id = "ghostCanvas";
+
+document.body.appendChild(canvas);
+
+const ctx = canvas.getContext("2d");
+
+function resizeCanvas() {
+
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+}
+
+resizeCanvas();
+
+window.addEventListener("resize", resizeCanvas);
+
+const ghostImage = new Image();
+
+ghostImage.src =
+"https://blob.gifcities.org/gifcities/B4ZP7RNFZKZF5ORQP6BJKW3GAMXI4RSB.gif";
+
+let particles = [];
+
+document.addEventListener("mousemove", e => {
+
+    particles.push({
+        x: e.clientX,
+        y: e.clientY,
+        life: 40
+    });
+
+});
+
+function animateGhosts() {
+
+    ctx.clearRect(
+        0,
+        0,
+        canvas.width,
+        canvas.height
+    );
+
+    particles.forEach(p => {
+
+        p.life--;
+
+        ctx.globalAlpha =
+            p.life / 40;
+
+        ctx.drawImage(
+            ghostImage,
+            p.x - 16,
+            p.y - 16,
+            32,
+            32
+        );
+
+    });
+
+    particles =
+        particles.filter(
+            p => p.life > 0
+        );
+
+    requestAnimationFrame(
+        animateGhosts
+    );
+
+}
+
+animateGhosts();
+
+let blink = true;
+
+setInterval(() => {
+
+    document.title = blink
+        ? "WAFFLE LAND"
+        : "WAFFLES";
+
+    blink = !blink;
+
+}, 1000);
+
+</script>
+<audio src="waffles.mp3" id="WAFFLES"></audio>
+<script src="Theme.js"> </script>
+
+<div id="rubberbanding">WEBSITES SO COOL!</div>
 </body>
+</html>
